@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--Dodanie arkusza css-->
+<link rel="stylesheet" href="login.css" />
+
+
 
 <head>
   <meta charset="UTF-8">
@@ -7,15 +11,24 @@
 </head>
 
 <body>
+ 
   <main id="main-holder">
     <h1 id="login-header">Login</h1>
 
     <form id="login-form">
       <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
       <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
-      <input type="submit" value="Login" id="login-form-submit">
+      <input type="submit" value="Login" id="login-form-submit" onclick="addEventListener">
+    </form>
+    <!--Dodanie brakujących formularzy wywoływanych w js-->
+    <form id="login-error-msg">
+        <p>Niepoprawny login lub hasło. Spróbuj ponownie.</p>
     </form>
 
   </main>
+
+
+  <!--Dodanie skryptu js-->
+  <script src="login.js"></script>
 </body>
 </html>
