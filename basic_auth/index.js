@@ -22,10 +22,10 @@ function authentication(req, res, next) {
 
 	if (user == '' && pass == '') {
 
-		// If Authorized user
+		// If Authorized user - poprawny login/haso
 		next();
 	} else {
-		var err = new Error('You are not authenticated!');
+		var err = new Error('You are not authenticated!'); //wyrzucenie wyjatku przy nieudanym logowaniu
 		res.setHeader('WWW-Authenticate', 'Basic');
 		err.status = 401;
 		return next(err);
@@ -33,11 +33,11 @@ function authentication(req, res, next) {
 
 }
 
-// First step is the authentication of the client
+// First step is the authentication of the client - uruchomienie procedury logownania
 app.use(authentication)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Server setup
+// Server setup - uruchomienie serwera node
 app.listen((3000), () => {
 	console.log("Server is Running");
 })
